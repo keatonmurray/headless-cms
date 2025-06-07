@@ -1,0 +1,167 @@
+{
+    "packages": [
+        {
+            "name": "firebase/php-jwt",
+            "version": "v6.11.1",
+            "version_normalized": "6.11.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^7.4",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psr/cache": "^2.0||^3.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0"
+            },
+            "suggest": {
+                "ext-sodium": "Support EdDSA (Ed25519) signatures",
+                "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
+            },
+            "time": "2025-04-09T20:32:01+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "keywords": [
+                "jwt",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/firebase/php-jwt/issues",
+                "source": "https://github.com/firebase/php-jwt/tree/v6.11.1"
+            },
+            "install-path": "../firebase/php-jwt"
+        },
+        {
+            "name": "wp-graphql/wp-graphql-woocommerce",
+            "version": "v0.21.2",
+            "version_normalized": "0.21.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-graphql/wp-graphql-woocommerce.git",
+                "reference": "24dede2b8925091d16bc48d85269ca021e9b7237"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql-woocommerce/zipball/24dede2b8925091d16bc48d85269ca021e9b7237",
+                "reference": "24dede2b8925091d16bc48d85269ca021e9b7237",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^6.1.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "axepress/wp-graphql-cs": "^2.0.0-beta",
+                "axepress/wp-graphql-stubs": "^1.27.1",
+                "brainmaestro/composer-git-hooks": "^2.8.5",
+                "php-stubs/woocommerce-stubs": "9.1.0",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpdoc-parser": "^1.22.0",
+                "phpstan/phpstan": "^1.10",
+                "szepeviktor/phpstan-wordpress": "^1.3"
+            },
+            "time": "2025-03-01T00:23:22+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "hooks": {
+                    "post-merge": [
+                        "composer install"
+                    ],
+                    "pre-commit": [
+                        "composer runPreCommitCleanup"
+                    ]
+                },
+                "strauss": {
+                    "packages": [
+                        "firebase/php-jwt"
+                    ],
+                    "classmap_prefix": "WP_GraphQL_WooCommerce_Vendor",
+                    "constant_prefix": "WPGRAPHQL_WOOCOMMERCE_VENDOR",
+                    "namespace_prefix": "WPGraphQL\\WooCommerce\\Vendor\\",
+                    "target_directory": "vendor-prefixed",
+                    "delete_vendor_files": true,
+                    "exclude_from_prefix": {
+                        "file_patterns": []
+                    },
+                    "include_modified_date": false
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "vendor-prefixed/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Geoff Taylor",
+                    "email": "kidunot89@gmail.com",
+                    "role": "Lead developer"
+                }
+            ],
+            "description": "WooCommerce bindings for WPGraphQL",
+            "keywords": [
+                "api",
+                "graphql",
+                "woocommerce",
+                "woocommerce-extension",
+                "woographql",
+                "wordpress",
+                "wp-graphql",
+                "wp-graphql-extension"
+            ],
+            "support": {
+                "issues": "https://github.com/wp-graphql/wp-graphql-woocommerce/issues",
+                "source": "https://github.com/wp-graphql/wp-graphql-woocommerce"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/kidunot89",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../wp-graphql/wp-graphql-woocommerce"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

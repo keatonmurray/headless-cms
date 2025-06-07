@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'c92b8ffbfd7483721398bea4421e9f784c32974d',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'c92b8ffbfd7483721398bea4421e9f784c32974d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v6.11.1',
+            'version' => '6.11.1.0',
+            'reference' => 'd1e91ecf8c598d073d0995afa8cd5c75c6e19e66',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wp-graphql/wp-graphql-woocommerce' => array(
+            'pretty_version' => 'v0.21.2',
+            'version' => '0.21.2.0',
+            'reference' => '24dede2b8925091d16bc48d85269ca021e9b7237',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../wp-graphql/wp-graphql-woocommerce',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "wp-graphql/wp-graphql-woocommerce": "^0.21.2"
+    }
+}
