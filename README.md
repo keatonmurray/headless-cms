@@ -1,6 +1,6 @@
 # 🛍️ Headless WooCommerce E-commerce Store
 
-This project is a **headless e-commerce web application** using **WordPress** and **WooCommerce** as the backend CMS, and **React.js** as the frontend framework.
+A modern headless e-commerce powerhouse — leveraging **WordPress** and **WooCommerce** as a flexible backend, powered by **GraphQL APIs**, and delivering a blazing-fast **React.js** frontend experience.
 
 ---
 
