@@ -1,31 +1,12 @@
-# 🛍️ Headless WooCommerce E-commerce Store
+# React + Vite
 
-This project is a **headless e-commerce web application** using **WordPress** and **WooCommerce** as the backend CMS, and **React.js** as the frontend framework.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Technologies Used
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Backend  
-- 📝 WordPress (Headless CMS)  
-- 🛒 WooCommerce (E-commerce plugin)  
-- 📡 WPGraphQL & WPGraphQL WooCommerce (GraphQL API for WordPress and WooCommerce)
+## Expanding the ESLint configuration
 
-### Frontend  
-- ⚛️ React.js (with Vite)  
-- 🚀 Apollo Client (GraphQL client)  
-- 🔀 React Router (SPA routing)  
-- 🎨 Bootstrap 5 (UI framework)
-
-### Tools  
-- 📬 Postman (for API testing)  
-- 🔐 dotenv (environment variable management)  
-
----
-
-## 📁 Project Structure
-
-- `api/` - WordPress backend folder with minimal theme files (`index.php`, `functions.php`, `style.css`)  
-- `client/` - React frontend built with Vite
-
----
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
