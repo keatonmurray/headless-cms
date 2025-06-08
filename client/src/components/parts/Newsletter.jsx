@@ -1,0 +1,26 @@
+import Img from "../partials/Img"
+import bg from "/img/plant1.jpg"
+const Newsletter = () => {
+  return (
+    <div className="row newsletter mt-5">
+        <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <h1 className="text-center mb-3">
+                The most important things are not things, so we design experiences
+            </h1>
+            <form className="w-100 px-3">
+                <div className="input-group">
+                    <input type="text" className="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="To subscribe to our newsletter, we need your email address" />
+                    <span className="input-group-text bg-transparent border-0 border-bottom rounded-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div className="mt-3 col-12 col-md-6 d-flex align-items-end align-items-md-center justify-content-center justify-content-md-center">
+            <Img src={bg} alt="Background Image" />
+        </div>
+    </div>
+  )
+}
+
+export default Newsletter

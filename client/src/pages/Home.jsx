@@ -1,6 +1,8 @@
 import bg from '/img/cactus1.jpg'
 import Img from '../components/partials/Img'
 import FeaturedProducts from '../components/parts/FeaturedProducts'
+import Newsletter from '../components/parts/Newsletter'
+import ContactUs from '../components/parts/ContactUs'
 
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
           </div>
       </div>
       <FeaturedProducts />
+      <Newsletter />
+      <ContactUs />
     </div>
   )
 }

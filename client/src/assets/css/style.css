@@ -96,7 +96,8 @@
 }
 
 .home figure img,
-.featured-products .row .product img {
+.featured-products .row .product img,
+.newsletter img {
   border-radius: var(--img-border-radius);
   height: 500px;
   width: 300px;
@@ -113,3 +114,14 @@
   font-size: 23px;
 } 
 
+/* Newsletter */
+
+.newsletter h1 {
+  color: var(--primary-color)
+}
+
+.newsletter i {
+  color: var(--primary-text-color);
+  cursor: pointer;
+  font-size: 24px;
+}
