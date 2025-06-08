@@ -1,7 +1,7 @@
 // App.jsx
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Products from './pages/Products';
+import PopularProducts from './pages/PopularProducts';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import SingleProduct from './pages/SingleProduct';
@@ -11,7 +11,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout><Home /></Layout>} />
-      <Route path="/products" element={<Layout><Products /></Layout>} />
+      <Route path="/popular-products" element={<Layout><PopularProducts /></Layout>} />
       <Route path="/product" element={<Layout><SingleProduct /></Layout>} />
     </Routes>
   );

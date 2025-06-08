@@ -11,18 +11,18 @@ const Newsletter = () => {
                 <div className="input-group">
                     <input type="text" className="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="To subscribe to our newsletter, we need your email address" />
                     <span className="input-group-text bg-transparent border-0 border-bottom rounded-0">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i className="fa-solid fa-envelope"></i>
                     </span>
                 </div>
                <div className="mt-3 d-flex justify-content-md-end justify-content-center">
                     <button className="btn btn-sm btn-custom-primary">
-                        <i class="fa-solid fa-bell me-2" style={{color: 'white', fontSize:'15px'}}></i>
+                        <i className="fa-solid fa-bell me-2" style={{color: 'white', fontSize:'15px'}}></i>
                         Subscribe
                     </button>
                </div>
             </form>
         </div>
-        <div className="mt-4 col-12 col-md-6 d-flex align-items-end align-items-md-center justify-content-center justify-content-md-center">
+        <div className="mt-4 col-12 col-md-6 d-flex align-items-md-end align-items-center justify-content-center justify-content-md-end">
             <Img src={bg} alt="Background Image" />
         </div>
     </div>

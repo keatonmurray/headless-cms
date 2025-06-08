@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-md-end justify-content-center align-items-center mt-3">
           <button className="btn btn-custom-primary">
-            <i class="fa-solid fa-eye me-2"></i>
+            <i className="fa-solid fa-eye me-2"></i>
               See All Collections
             </button>
         </div>

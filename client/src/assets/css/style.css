@@ -79,6 +79,9 @@
   .title-two {
     font-size: 55px !important;
   }
+  .popular-products img {
+    max-height: 420px !important;
+  }
 }
 
 /* Home */
@@ -132,3 +135,42 @@ footer i {
   font-size: 30px;
   color: var(--secondary-color);
 }
+
+/* Popular Products */
+
+.popular-products img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  border-radius: 12px; 
+  cursor: pointer;
+}
+
+.d-flex .product-filter-toggle {
+  background: transparent;
+  border: 0;
+}
+
+.product-filter-toggle i {
+  color: var(--secondary-color);
+  font-size: 25px;
+}
+
+.filter-card {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.filter-card.show {
+  max-height: 1200px; 
+}
+
+@media (min-width: 768px) {
+  .filter-card {
+    max-height: none !important;
+    overflow: visible;
+  }
+}
+
+

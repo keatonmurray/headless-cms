@@ -1,19 +1,21 @@
-import React from 'react'
+import {Link} from 'react-router-dom';
 
 const NavLinks = () => {
   return (
     <ul className="d-flex list-unstyled m-0 p-0 justify-content-center">
         <li className="me-3">
-            <a className="text-decoration-none text-dark">Popular Products</a>
+            <Link to="/popular-products" className="text-decoration-none text-dark">
+                Popular Products
+            </Link>
         </li>
         <li className="me-3">
-            <a className="text-decoration-none text-dark">Featured Products</a>
+            <Link className="text-decoration-none text-dark">Featured Products</Link>
         </li>
         <li className="me-3">
-            <a className="text-decoration-none text-dark" >On Sale</a>
+            <Link className="text-decoration-none text-dark" >On Sale</Link>
         </li>
         <li className="me-3">
-            <a className="text-decoration-none text-dark">My Account</a>
+            <Link className="text-decoration-none text-dark">My Account</Link>
         </li>
     </ul>
   )
