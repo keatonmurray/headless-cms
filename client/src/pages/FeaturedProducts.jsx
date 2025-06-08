@@ -20,12 +20,12 @@ const FeaturedProducts = () => {
                                     Cactus
                                     <span className="d-block product-price">$19.99</span>
                                 </h5>
-                                 <div class="product-rating mb-4">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                 <div className="product-rating mb-4">
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
                                 </div>
                             </div>
                         </div>
@@ -38,12 +38,12 @@ const FeaturedProducts = () => {
                                     Cactus
                                     <span className="d-block product-price">$19.99</span>
                                 </h5>
-                                <div class="product-rating mb-4">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div className="product-rating mb-4">
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
                                 </div>
                             </div>
                         </div>
@@ -56,12 +56,12 @@ const FeaturedProducts = () => {
                                     Cactus
                                     <span className="d-block product-price">$19.99</span>
                                 </h5>
-                                <div class="product-rating mb-4">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div className="product-rating mb-4">
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
                                 </div>
                             </div>
                         </div>
@@ -74,12 +74,12 @@ const FeaturedProducts = () => {
                                     Cactus
                                     <span className="d-block product-price">$19.99</span>
                                 </h5>
-                                <div class="product-rating mb-4">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                <div className="product-rating mb-4">
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
                                 </div>
                             </div>
                         </div>
