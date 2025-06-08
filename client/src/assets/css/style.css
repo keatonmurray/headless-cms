@@ -146,6 +146,15 @@ footer i {
   cursor: pointer;
 }
 
+.popular-products .product-price {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+
+.popular-products .fa-star {
+  font-size: 22px;
+}
+
 .d-flex .product-filter-toggle {
   background: transparent;
   border: 0;

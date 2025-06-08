@@ -15,21 +15,73 @@ const PopularProducts = () => {
                     <div className="col-12 col-md-3">
                         <div className="product">
                             <Img src={product} alt="Product"/>
+                            <div className="product-body mt-1 text-center">
+                                <h5 className="product-title">
+                                    Cactus
+                                    <span className="d-block product-price">$19.99</span>
+                                </h5>
+                                <div class="product-rating mb-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="col-12 col-md-3">
                         <div className="product">
                             <Img src={product} alt="Product"/>
+                            <div className="product-body mt-1 text-center">
+                                <h5 className="product-title">
+                                    Cactus
+                                    <span className="d-block product-price">$19.99</span>
+                                </h5>
+                                <div class="product-rating mb-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="col-12 col-md-3">
                         <div className="product">
                             <Img src={product} alt="Product"/>
+                            <div className="product-body mt-1 text-center">
+                                <h5 className="product-title">
+                                    Cactus
+                                    <span className="d-block product-price">$19.99</span>
+                                </h5>
+                                <div class="product-rating mb-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="col-12 col-md-3">
                         <div className="product">
                             <Img src={product} alt="Product"/>
+                            <div className="product-body mt-1 text-center">
+                                <h5 className="product-title">
+                                    Cactus
+                                    <span className="d-block product-price">$19.99</span>
+                                </h5>
+                                <div class="product-rating mb-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
