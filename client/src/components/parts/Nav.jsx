@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
-   <div className="row align-items-center w-100">
+   <div className="row align-items-center w-100 px-md-5 px-0"> 
         <div className="col-4 col-md-3">
             <Link to="/" className="logo ms-2">
                 <Img src={logo} alt="Logo" />

@@ -14,13 +14,15 @@ const Newsletter = () => {
                         <i class="fa-solid fa-envelope"></i>
                     </span>
                 </div>
-                <button className="float-end mt-3 btn btn-sm btn-custom-primary">
-                    <i class="fa-solid fa-bell me-2" style={{color: 'white', fontSize:'15px'}}></i>
-                    Subscribe
-                </button>
+               <div className="mt-3 d-flex justify-content-md-end justify-content-center">
+                    <button className="btn btn-sm btn-custom-primary">
+                        <i class="fa-solid fa-bell me-2" style={{color: 'white', fontSize:'15px'}}></i>
+                        Subscribe
+                    </button>
+               </div>
             </form>
         </div>
-        <div className="mt-3 col-12 col-md-6 d-flex align-items-end align-items-md-center justify-content-center justify-content-md-center">
+        <div className="mt-4 col-12 col-md-6 d-flex align-items-end align-items-md-center justify-content-center justify-content-md-center">
             <Img src={bg} alt="Background Image" />
         </div>
     </div>

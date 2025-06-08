@@ -6,7 +6,7 @@ import ContactUs from '../components/parts/ContactUs'
 
 const Home = () => {
   return (
-    <div>
+    <div className="px-md-5 px-3">
         <div className="home row mt-md-0 mt-5">
           <div className="text-md-start text-center col-12 col-md-6 d-flex justify-content-md-start justify-content-center align-items-center">
               <h1 className="heading title-one">Bringing Life 

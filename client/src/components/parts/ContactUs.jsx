@@ -7,7 +7,7 @@ const ContactUs = () => {
                 We'd love to hear about it!
             </span>
         </h1>
-       <form className="px-md-5 px-3">
+       <form>
             <div className="row">
                 <div className="col-12 col-md-6 my-4">
                     <input type="text" className="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="First Name" />
