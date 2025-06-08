@@ -1,14 +1,15 @@
 import Img from '../partials/Img.jsx'
 import logo from '/img/logo.png'
 import NavLinks from '../partials/NavLinks.jsx'
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
    <div className="row align-items-center w-100">
         <div className="col-4 col-md-3">
-            <div className="logo ms-2">
+            <Link to="/" className="logo ms-2">
                 <Img src={logo} alt="Logo" />
-            </div>
+            </Link>
         </div>
         <div className="col-md-6 d-none d-md-block text-center nav-links">
             <NavLinks />
