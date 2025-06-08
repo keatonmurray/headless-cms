@@ -7,13 +7,17 @@ const Newsletter = () => {
             <h1 className="text-center mb-3">
                 The most important things are not things, so we design experiences
             </h1>
-            <form className="w-100 px-3">
+            <form className="w-100 px-3 mt-3">
                 <div className="input-group">
                     <input type="text" className="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="To subscribe to our newsletter, we need your email address" />
                     <span className="input-group-text bg-transparent border-0 border-bottom rounded-0">
                         <i class="fa-solid fa-envelope"></i>
                     </span>
                 </div>
+                <button className="float-end mt-3 btn btn-sm btn-custom-primary">
+                    <i class="fa-solid fa-bell me-2" style={{color: 'white', fontSize:'15px'}}></i>
+                    Subscribe
+                </button>
             </form>
         </div>
         <div className="mt-3 col-12 col-md-6 d-flex align-items-end align-items-md-center justify-content-center justify-content-md-center">

@@ -12,7 +12,10 @@ const FeaturedProducts = () => {
           </h1>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-md-end justify-content-center align-items-center mt-3">
-          <button className="btn btn-custom-primary">See All Collections</button>
+          <button className="btn btn-custom-primary">
+            <i class="fa-solid fa-eye me-2"></i>
+              See All Collections
+            </button>
         </div>
       </div>
       <div className="row mt-5">
