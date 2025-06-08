@@ -9,10 +9,10 @@ const NavLinks = () => {
             </Link>
         </li>
         <li className="me-3">
-            <Link className="text-decoration-none text-dark">Featured Products</Link>
+            <Link to="/featured-products" className="text-decoration-none text-dark">Featured Products</Link>
         </li>
         <li className="me-3">
-            <Link className="text-decoration-none text-dark" >On Sale</Link>
+            <Link to="/on-sale" className="text-decoration-none text-dark" >On Sale</Link>
         </li>
         <li className="me-3">
             <Link className="text-decoration-none text-dark">My Account</Link>
