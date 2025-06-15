@@ -5,7 +5,7 @@ const SingleProduct = () => {
   return (
     <div className="mt-5 single-product px-md-5 px-3">
       <div className="row justify-content-center">
-         <div className="col-12 col-md-5 d-flex flex-column align-items-center">
+         <div className="col-12 col-md-5 d-flex flex-column align-items-center pb-2">
             <div className="single-product-image-wrapper">
               <Img src={productImg} className="single-product-image" alt="Product Image" />
             </div>
@@ -23,6 +23,15 @@ const SingleProduct = () => {
                     <button className="btn btn-sm btn-custom-primary ms-2">
                         <i className="fas fa-plus"></i>
                     </button>
+                  </div>
+                  <div className="mt-3 variation">
+                    <label className="form-label">Select Variation</label>
+                    <select className="form-select">
+                      <option value="Cactus 1">Cactus 1</option>
+                      <option value="Cactus 2">Cactus 2</option>
+                      <option value="Cactus 3">Cactus 3</option>
+                      <option value="Cactus 4">Cactus 4</option>
+                    </select>
                   </div>
                   <p className="text-muted my-3 text-md-start text-center">Items in stock: 900</p>
                   <div className="w-100 mt-4">
