@@ -6,9 +6,17 @@ export const GET_MENUS = gql`
             nodes {
             id
             label
-            url
+            url  # This is the full URL (e.g., https://yoursite.com/about)
+            connectedNode {
+                node {
+                ... on Page {
+                    id
+                    title
+                    uri  # This is the relative slug (e.g., "/about")
+                }
+                }
+            }
             }
         }
     }
-
 `
