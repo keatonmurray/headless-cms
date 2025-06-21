@@ -42,5 +42,4 @@ export const GET_FEATURED_PRODUCTS = gql`
       }
     }
   }
-
 `;

@@ -1,5 +1,4 @@
 import Img from '../partials/Img'
-import featuredProductImg from '/img/cactus1.jpg'
 import { Link } from 'react-router-dom';
 import { GET_FEATURED_PRODUCTS } from '../../graphql/queries/products';
 import { useQuery } from '@apollo/client';
