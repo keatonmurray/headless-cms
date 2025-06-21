@@ -82,7 +82,7 @@ function PageRenderer() {
               </div>
             ))}
 
-            {products.length === 0 && <p>No products found in this category.</p>}
+            {products.length === 0 && <div className="d-flex align-items-center justify-content-center min-vh-100">No products found in this category.</div>}
           </div>
         </div>
       </div>
