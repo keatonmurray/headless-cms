@@ -4,7 +4,7 @@ A modern headless e-commerce powerhouse — leveraging **WordPress** and **WooCo
 
 ---
 
-## 🛍️ My Personal Take On Going Headless with WooCommerce
+## 🧠 My Personal Take On Going Headless with WooCommerce
 
 As a developer building a **headless WordPress + WooCommerce** stack powered by **React** and **GraphQL**, I’ve had the opportunity to dissect both the power and the pain points of this architecture.
 
