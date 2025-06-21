@@ -1,19 +1,46 @@
 import { gql } from '@apollo/client';
 
-export const GET_PRODUCTS = gql`
+export const GET_FEATURED_PRODUCTS = gql`
   query {
-    products(first: 1) {
+    featuredProducts: products(
+      where: {
+        taxonomyFilter: {
+          filters: [
+            {
+              taxonomy: PRODUCT_VISIBILITY
+              terms: ["featured"]
+              operator: IN
+            }
+          ]
+        }
+      }
+    ) {
       nodes {
         __typename
+
         ... on SimpleProduct {
           id
           name
           price
-          image {
-            sourceUrl
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+
+        ... on VariableProduct {
+          id
+          name
+          price
+          featuredImage {
+            node {
+              sourceUrl
+            }
           }
         }
       }
     }
-}
+  }
+
 `;

@@ -1,13 +1,13 @@
 import Img from '../partials/Img'
 import featuredProductImg from '/img/cactus1.jpg'
 import { Link } from 'react-router-dom';
-import { GET_PRODUCTS } from '../../graphql/queries/products';
+import { GET_FEATURED_PRODUCTS } from '../../graphql/queries/products';
 import { useQuery } from '@apollo/client';
 
 const FeaturedProducts = () => {
 
-  const { data } = useQuery(GET_PRODUCTS)
-  const products = data?.products?.nodes || [];
+  const { data } = useQuery(GET_FEATURED_PRODUCTS)
+  const featuredProducts = data?.featuredProducts?.nodes || [];
 
   return (
     <div className="featured-products mt-5">
@@ -26,21 +26,25 @@ const FeaturedProducts = () => {
         </div>
       </div>
       <div className="row mt-5">
-        {products.map((product) => (
-          <div className="mb-3 col-12 col-md-3 mb-2 d-flex align-items-center justify-content-center">
-            <Link to={`/product/${product.id}`} className="text-decoration-none text-dark">
-              <div className="product">
-                <Img src={product.image.sourceUrl} alt="Featured Product" />
+        {featuredProducts && featuredProducts.length > 0 ? (
+          featuredProducts.map((product) => (
+            <div key={product.id} className="mb-3 col-12 col-md-3 mb-2 d-flex align-items-center justify-content-center">
+              <Link to={`/product/${product.id}`} className="text-decoration-none text-dark">
+                <div className="product">
+                  <Img src={product.featuredImage.node.sourceUrl} alt="Featured Product" />
                   <div className="product-body text-center">
                     <h2 className="product-price">
                       {product.price}
                       <span className="d-block product-name">{product.name}</span>
                     </h2>
                   </div>
-              </div>
-            </Link>
-          </div>
-        ))}
+                </div>
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p>No featured products available</p>
+        )}
       </div>
     </div>
   )
