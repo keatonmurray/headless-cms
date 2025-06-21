@@ -67,7 +67,7 @@ const MiddleSection = () => {
                                 />
                                 <div className="product-body mt-2">
                                 <h2 className="product-price">
-                                    {price ? `$${price}` : 'Price unavailable'}
+                                    {price ? `${price}` : 'Price unavailable'}
                                     <span className="d-block product-name">{product.name}</span>
                                 </h2>
                                 </div>
