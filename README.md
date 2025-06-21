@@ -50,54 +50,39 @@ All rendering and user experience happens **in React**, powered by **WPGraphQL +
 
 ---
 
+
 ### 🔄 WooCommerce Plugins: Compatibility
 
 | Plugin Type                         | Works Headless? | Notes                          |
 |-------------------------------------|------------------|-------------------------------|
 | Product meta / ACF fields           | ✅ Yes           | Query via GraphQL             |
 | Taxonomy-based enhancements         | ✅ Yes           | Tag, category, attributes     |
-| Stripe, PayPal, Square plugins      | ❌ No            | Use native SDKs (React side) |
+| Stripe, PayPal, Square plugins      | ❌ No            | Use native SDKs in React      |
 | Subscription, booking plugins       | ⚠️ Partial       | Needs REST or custom GraphQL |
-| UI checkout enhancements (tabs, steps, etc.) | ❌ No  | Must replicate manually       |
+| UI checkout enhancements            | ❌ No            | Must replicate manually       |
+
+> I'm still actively exploring how best to handle checkout and cart workflows using GraphQL and/or direct SDKs. This area is evolving and will require additional architectural decisions and experimentation.
 
 ---
 
-### 🛒 Checkout Strategy
+### 🧩 Custom GraphQL for Plugin Support
 
-We implemented a **fully headless checkout flow**, bypassing Woo’s PHP checkout page:
-
-- **Custom cart logic** in React (context or state)
-- **Payment handling** using:
-  - Stripe Elements (`@stripe/react-stripe-js`)
-  - PayPal JavaScript SDK
-- **Custom GraphQL mutation** in PHP to:
-  - Create WooCommerce order
-  - Add metadata (e.g. transaction ID)
-  - Trigger WooCommerce order hooks (emails, stock, etc.)
-
----
-
-### 🧩 Custom GraphQL for Checkout
-
-For any plugin or checkout customization, we:
+For any plugin or checkout customization, I plan to:
 1. Use `register_graphql_mutation()` in PHP
 2. Expose only the required input fields
-3. Trigger WooCommerce logic (e.g. `wc_create_order()`)
-4. Return success, order ID, and any necessary data
+3. Trigger WooCommerce logic (`wc_create_order()`, add metadata, etc.)
+4. Return the necessary data to the frontend
 
-Example use cases:
-- Add gift note field
-- Store shipping method or discount code
-- Trigger custom workflows post-payment
+This gives me precise control over WooCommerce data and plugin integrations without relying on PHP templates or REST when not needed.
 
 ---
 
-### 📚 Lessons Learned
+### 📚 Lessons So Far
 
 - Headless WooCommerce isn’t “just” headless WordPress — it’s deeper and more involved
-- You must **understand WooCommerce hooks, order logic, and meta**
-- You’ll write **more glue code** — especially for checkout
-- GraphQL alone doesn’t solve everything — sometimes **REST** is needed too
+- You must **understand WooCommerce internals** (order lifecycle, stock, metadata)
+- GraphQL is great, but not all WooCommerce logic is exposed by default — expect to write custom resolvers
+- Checkout and cart logic are still **in-progress** and require thoughtful architecture
 
 ---
 
