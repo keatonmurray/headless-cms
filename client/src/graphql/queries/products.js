@@ -1,3 +1,7 @@
+/**
+ * This section retrieves dynamically added products, featured products, and products by categories from the WP Dashboard
+ */
+
 import { gql } from '@apollo/client';
 
 export const GET_FEATURED_PRODUCTS = gql`
@@ -38,7 +42,6 @@ export const GET_FEATURED_PRODUCTS = gql`
     }
   }
 `
-
 
 export const GET_PRODUCTS_BY_CATEGORY = gql`
   query ProductsByCategory($slug: [String]) {

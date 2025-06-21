@@ -1,3 +1,7 @@
+/**
+ * This section retrieves dynamically added pages from the WP Dashboard 
+ */
+
 import { gql } from '@apollo/client';
 
 export const GET_PAGE_BY_URI = gql`

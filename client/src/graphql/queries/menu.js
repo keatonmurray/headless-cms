@@ -1,3 +1,7 @@
+/**
+ * This section retrieves dynamically added nav menus from the WP Dashboard 
+ */
+
 import { gql } from '@apollo/client';
 
 export const GET_MENUS = gql`
