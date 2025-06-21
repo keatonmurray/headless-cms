@@ -1,16 +1,45 @@
 /**
- * This section retrieves dynamically added pages from the WP Dashboard 
+ * This section retrieves dynamically added pages/categories from the WP Dashboard 
  */
 
 import { gql } from '@apollo/client';
 
 export const GET_PAGE_BY_URI = gql`
-  query GetPageByUri($uri: String!) {
-    pageBy(uri: $uri) {
-      title
-      content
-      slug
-      uri
+  query RESOLVE_NODE_BY_URI($uri: String!) {
+    nodeByUri(uri: $uri) {
+      __typename
+      ... on ProductCategory {
+        id
+        name
+        uri
+        products(first: 100) {
+          nodes {
+            id
+            name
+            slug
+            image {
+              sourceUrl
+              altText
+            }
+            __typename
+            ... on SimpleProduct {
+              price
+            }
+            ... on VariableProduct {
+              price
+            }
+            ... on ExternalProduct {
+              price
+            }
+          }
+        }
+      }
+      ... on Page {
+        id
+        title
+        uri
+        content
+      }
     }
   }
 `;

@@ -1,19 +1,17 @@
 import Img from '../../partials/Img';
 import bg from "/img/plant1.jpg"
+import Cliploader from '../../partials/Cliploader';
 import { Link } from 'react-router-dom';
 import { GET_FEATURED_PRODUCTS } from '../../../graphql/queries/products';
 import { useQuery } from '@apollo/client';
-import { ClipLoader } from 'react-spinners';
 
 const MiddleSection = () => {
     const { error, loading, data } = useQuery(GET_FEATURED_PRODUCTS);
       const featuredProducts = data?.featuredProducts?.nodes || [];
     
       if (loading) {
-        return (
-          <div className="d-flex justify-content-center align-items-center min-vh-100">
-            <ClipLoader color="#005800" loading={true} size={50} />
-          </div>
+         return (
+            <Cliploader />
         );
       }
     

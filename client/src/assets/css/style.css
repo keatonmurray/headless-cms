@@ -273,3 +273,11 @@ footer i {
   object-fit: cover;    
   display: block;
 }
+
+/* Post Page */
+
+.post-page .container-fluid img {
+  max-height: 250px;
+  height: auto;
+  border-radius: 50%;
+}
