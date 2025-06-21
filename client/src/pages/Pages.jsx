@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Img from "../components/partials/Img";
 import ProductFilter from "../components/partials/ProductFilter";
 
-function PageRenderer() {
+function Pages() {
   const location = useLocation();
   const path = location.pathname;
 
@@ -85,4 +85,4 @@ function PageRenderer() {
   );
 }
 
-export default PageRenderer;
+export default Pages;

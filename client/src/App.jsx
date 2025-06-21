@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Layout from './layout/Layout';
-import PageRenderer from './pages/PageRenderer';
-import SingleProduct from './pages/SingleProduct';
+import Pages from './pages/Pages';
+import Product from './pages/Product';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout><Home /></Layout>} />
-      <Route path="*" element={<Layout><PageRenderer /></Layout>} />
-      <Route path="/product/:slug" element={<Layout><SingleProduct /></Layout>} />
+      <Route path="*" element={<Layout><Pages /></Layout>} />
+      <Route path="/product/:slug" element={<Layout><Product /></Layout>} />
     </Routes>
   );
 }

@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ClipLoader } from 'react-spinners';
 
-const SingleProduct = () => {
+const Product = () => {
   const { slug } = useParams();
 
   const { data, loading, error } = useQuery(GET_SINGLE_PRODUCT, {
@@ -136,4 +136,4 @@ const SingleProduct = () => {
   );
 };
 
-export default SingleProduct;
+export default Product;

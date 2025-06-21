@@ -1,4 +1,6 @@
-const ContactUs = () => {
+import React from 'react'
+
+const BottomSection = () => {
   return (
     <div className="contact-us mt-5">
         <h1 className="text-center">
@@ -30,4 +32,4 @@ const ContactUs = () => {
   )
 }
 
-export default ContactUs
+export default BottomSection
