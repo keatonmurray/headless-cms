@@ -17,32 +17,28 @@ export const GET_FEATURED_PRODUCTS = gql`
     ) {
       nodes {
         __typename
-
-        ... on SimpleProduct {
-          id
-          name
-          price
-          featuredImage {
-            node {
-              sourceUrl
-            }
+        name
+        slug
+        featuredImage {
+          node {
+            sourceUrl
           }
         }
-
-        ... on VariableProduct {
-          id
-          name
+        ... on SimpleProduct {
           price
-          featuredImage {
-            node {
-              sourceUrl
+        }
+        ... on VariableProduct {
+          variations(first: 1) {
+            nodes {
+              price(format: RAW)
             }
           }
         }
       }
     }
   }
-`;
+`
+
 
 export const GET_PRODUCTS_BY_CATEGORY = gql`
   query ProductsByCategory($slug: [String]) {
@@ -58,16 +54,62 @@ export const GET_PRODUCTS_BY_CATEGORY = gql`
         ... on SimpleProduct {
           price(format: RAW)
         }
-        ... on VariableProduct {
-          price(format: RAW)
-        }
-        ... on ExternalProduct {
-          price(format: RAW)
-        }
-        ... on GroupProduct {
-          price(format: RAW)
-        }
       }
     }
   }
 `
+export const GET_SINGLE_PRODUCT = gql`
+  query GetProductBySlug($slug: ID!) {
+    product(id: $slug, idType: SLUG) {
+      id
+      name
+      slug
+      description
+      shortDescription
+      sku
+      image {
+        sourceUrl
+        altText
+      }
+      galleryImages {
+        nodes {
+          sourceUrl
+          altText
+        }
+      }
+
+      ... on SimpleProduct {
+        price(format: RAW)
+        regularPrice(format: RAW)
+        stockStatus
+        stockQuantity
+      }
+
+      ... on VariableProduct {
+        price(format: RAW)
+        stockStatus
+        stockQuantity
+        variations(first: 50) {
+          nodes {
+            id
+            sku
+            stockStatus
+            stockQuantity
+            attributes {
+              nodes {
+                name
+                value
+              }
+            }
+            price(format: RAW)
+          }
+        }
+      }
+
+      ... on ExternalProduct {
+        price(format: RAW)
+        externalUrl
+      }
+    }
+  }
+`;
