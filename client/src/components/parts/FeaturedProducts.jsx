@@ -2,11 +2,24 @@ import Img from '../partials/Img'
 import { Link } from 'react-router-dom';
 import { GET_FEATURED_PRODUCTS } from '../../graphql/queries/products';
 import { useQuery } from '@apollo/client';
+import { ClipLoader } from "react-spinners";
 
 const FeaturedProducts = () => {
 
-  const { data } = useQuery(GET_FEATURED_PRODUCTS)
+  const {error, loading, data } = useQuery(GET_FEATURED_PRODUCTS)
   const featuredProducts = data?.featuredProducts?.nodes || [];
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center min-vh-100">
+        <ClipLoader color="#005800" loading={true} size={50} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p className="text-danger text-center">Something went wrong: {error.message}</p>;
+  }
 
   return (
     <div className="featured-products mt-5">

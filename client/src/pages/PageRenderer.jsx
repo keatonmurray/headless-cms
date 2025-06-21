@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_PAGE_BY_URI } from '../graphql/queries/pages';
 import { GET_PRODUCTS_BY_CATEGORY } from '../graphql/queries/products';
+import { ClipLoader } from "react-spinners";
 import Img from "../components/partials/Img";
 import ProductFilter from "../components/partials/ProductFilter";
 
@@ -27,11 +28,16 @@ function PageRenderer() {
     loading: productLoading,
   } = useQuery(GET_PRODUCTS_BY_CATEGORY, {
     variables: { slug: [slug] },
-    skip: !slug, // Skip this query if slug is not yet available
+    skip: !slug, 
   });
 
-  // Handle loading and error states
-  if (pageLoading || productLoading) return <p>Loading...</p>;
+  if (pageLoading || productLoading)
+    return (
+      <div className="d-flex justify-content-center align-items-center min-vh-100">
+        <ClipLoader color="#005800" loading={true} size={50} />
+      </div>
+    );
+
   if (pageError || !page) return <p>Page not found</p>;
 
   // Extract the products array from the query result

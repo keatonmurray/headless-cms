@@ -6,6 +6,6 @@ export default defineConfig({
   // base: '/client/',
   plugins: [react()],
   server: {
-    allowedHosts: ['https://spikyblooms.rf.gd'],
+    allowedHosts: ['3bc50a78a5ccc6.lhr.life'],
   },
 })
