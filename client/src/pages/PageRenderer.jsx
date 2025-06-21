@@ -1,30 +1,85 @@
 import { useLocation } from 'react-router-dom';
-import { gql, useQuery } from '@apollo/client';
-
-const GET_PAGE_BY_URI = gql`
-  query GetPageByUri($uri: String!) {
-    pageBy(uri: $uri) {
-      title
-      content
-    }
-  }
-`;
+import { useQuery } from '@apollo/client';
+import { GET_PAGE_BY_URI } from '../graphql/queries/pages';
+import { GET_PRODUCTS_BY_CATEGORY } from '../graphql/queries/products';
+import Img from "../components/partials/Img";
+import ProductFilter from "../components/partials/ProductFilter";
 
 function PageRenderer() {
+  // Get the current URL path using React Router
   const location = useLocation();
   const path = location.pathname;
 
-  const { data, loading, error } = useQuery(GET_PAGE_BY_URI, {
+  // Query the WordPress page data based on the URI (path)
+  const { data: pageData, loading: pageLoading, error: pageError } = useQuery(GET_PAGE_BY_URI, {
     variables: { uri: path },
   });
 
-  if (loading) return <p>Loading...</p>;
-  if (error || !data?.pageBy) return <p>Page not found</p>;
+  // Extract the page object once data is available
+  const page = pageData?.pageBy;
+
+  // Extract the slug from the URI (used to query products by category)
+  const slug = page?.uri?.split('/').filter(Boolean).pop();
+
+  // Query products based on the category slug (e.g., 'on-sale', 'featured-products', etc.)
+  const {
+    data: productData,
+    loading: productLoading,
+  } = useQuery(GET_PRODUCTS_BY_CATEGORY, {
+    variables: { slug: [slug] },
+    skip: !slug, // Skip this query if slug is not yet available
+  });
+
+  // Handle loading and error states
+  if (pageLoading || productLoading) return <p>Loading...</p>;
+  if (pageError || !page) return <p>Page not found</p>;
+
+  // Extract the products array from the query result
+  const products = productData?.products?.nodes || [];
 
   return (
-    <div className="container mt-5">
-      <h1>{data.pageBy.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.pageBy.content }} />
+    <div className="mt-5 popular-products px-md-5 px-3">
+      {/* Page title from WordPress */}
+      <h1 className="text-center">{page.title}</h1>
+
+      <div className="row mt-5">
+        {/* Product filter sidebar */}
+        <div className="col-12 col-md-4 mb-5">
+          <ProductFilter />
+        </div>
+
+        {/* Product grid */}
+        <div className="col-12 col-md-8">
+          <div className="row g-3">
+            {products.map((product) => (
+              <div className="col-12 col-md-3" key={product.id}>
+                <div className="product">
+                  <Img
+                    src={product.image?.sourceUrl}
+                    alt={product.image?.altText || product.name}
+                  />
+                  <div className="product-body mt-1 text-center">
+                    <h5 className="product-title">
+                      {product.name}
+                      <span className="d-block product-price">
+                        ${product.price}
+                      </span>
+                    </h5>
+                    {/* Static star rating for now */}
+                    <div className="product-rating mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <i className="fas fa-star" key={i}></i>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {products.length === 0 && <p>No products found in this category.</p>}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
