@@ -5,6 +5,7 @@ import Cliploader from '../components/partials/Cliploader';
 import Category from '../components/sections/page/Category';
 import PageNotFound from '../components/partials/PageNotFound';
 import Post from '../components/sections/page/Post';
+import Product from '../components/sections/page/Product';
 
 const Pages = () => {
   const location = useLocation();
@@ -29,6 +30,12 @@ const Pages = () => {
     return (
       <Post title={node.title} content={node.content} />
     );
+  }
+
+  if (
+    ['SimpleProduct', 'VariableProduct', 'ExternalProduct'].includes(node.__typename)
+  ) {
+    return <Product product={node} />;
   }
 
   return <PageNotFound />;

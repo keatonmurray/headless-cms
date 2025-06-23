@@ -1,5 +1,5 @@
 /**
- * This section retrieves dynamically added posts from the WP Dashboard
+ * This query retrieves dynamically added posts from the WP Dashboard
  */
 
 import { gql } from '@apollo/client';

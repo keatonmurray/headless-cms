@@ -16,7 +16,7 @@ const Category = ({ category, products }) => {
           <div className="row g-3">
             {products.map((product) => (
               <div className="col-12 col-md-3" key={product.id}>
-                <Link to={`/product/${product.slug}`} className="text-decoration-none text-dark">
+                <Link to={product.uri} className="text-decoration-none text-dark">
                   <div className="product">
                     <Img
                       src={product.image?.sourceUrl}

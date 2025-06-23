@@ -2,7 +2,7 @@ import Img from '../../partials/Img';
 import bg from "/img/plant1.jpg"
 import Cliploader from '../../partials/Cliploader';
 import { Link } from 'react-router-dom';
-import { GET_FEATURED_PRODUCTS } from '../../../graphql/queries/products';
+import { GET_FEATURED_PRODUCTS } from '../../../graphql/queries/featuredProducts';
 import { useQuery } from '@apollo/client';
 
 const MiddleSection = () => {
@@ -57,7 +57,7 @@ const MiddleSection = () => {
                             className="col-12 col-md-3 mb-4 d-flex align-items-center justify-content-center"
                         >
                             <Link
-                            to={`/product/${product.slug}`}
+                            to={product.uri}
                             className="text-decoration-none text-dark"
                             >
                             <div className="product text-center">
