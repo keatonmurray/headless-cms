@@ -25,6 +25,7 @@ class SettingsPage {
     {
         add_action('admin_menu', [$this, 'add_menu_page']);
         add_action('admin_init', [$this, 'register_settings']);
+        $this->enqueue_assets();
     }
 
     public function add_menu_page() {
@@ -52,4 +53,18 @@ class SettingsPage {
             echo '<div class="notice notice-error"><p>Settings view not found.</p></div>';
         }
     }
+
+    public function enqueue_assets() {
+        add_action('admin_enqueue_scripts', function ($hook) {
+        if (strpos($hook, 'headless-payments') === false) return;
+            wp_enqueue_script(
+                'hp-admin-tabs',
+                HP_PLUGIN_URL . 'assets/js/admin-tabs.js',
+                [],
+                '1.0.0',
+                true
+            );
+        });
+    }
+
 }

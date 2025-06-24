@@ -1,7 +1,13 @@
 import Img from '../partials/Img.jsx';
 import product from '/img/product1.jpg';
+import { useState } from 'react';
 
 const CartOverlay = () => {
+
+  const proceedToCheckout = () => {
+    //logic
+  }
+
   return (
     <div className="cart-overlay position-absolute end-0">
       <div className="card border-0 shadow-lg p-4">
@@ -41,7 +47,7 @@ const CartOverlay = () => {
           <span>$145.00</span>
         </div>
 
-        <button className="btn btn-custom-primary mt-2">Place Order</button>
+        <button onClick={proceedToCheckout} className="btn btn-custom-primary mt-2">Place Order</button>
 
       </div>
     </div>
