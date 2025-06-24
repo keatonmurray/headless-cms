@@ -2,6 +2,26 @@
 
 namespace HP\API;
 
+/**
+ * Class PayPalController
+ *
+ * Registers REST API routes related to PayPal operations for the Headless Payments plugin.
+ * 
+ * This controller handles endpoints like:
+ * - POST /wp-json/hp/v1/paypal/create-order
+ * - POST /wp-json/hp/v1/paypal/capture-order
+ * 
+ * Responsibilities:
+ * - Register PayPal-related routes on `rest_api_init`
+ * - Receive JSON requests for creating and capturing PayPal orders
+ * - Delegate actual processing to the PayPal service layer
+ *
+ * This controller is intended for internal use by headless frontends (e.g. React, Vue)
+ * that communicate with WordPress via REST API to process payments securely.
+ *
+ * @package HP\API
+ */
+
 use HP\Services\PayPalGateway;
 use WP_REST_Request;
 use WP_Error;

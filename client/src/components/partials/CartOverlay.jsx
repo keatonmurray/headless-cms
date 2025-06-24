@@ -5,7 +5,12 @@ import { useState } from 'react';
 const CartOverlay = () => {
 
   const proceedToCheckout = () => {
-    //logic
+    const cartSummary = {
+      amount: 65,
+      currency: "USD"
+    }
+    localStorage.setItem('hp_cart', JSON.stringify(cartSummary));
+    window.location.href = '/checkout';
   }
 
   return (

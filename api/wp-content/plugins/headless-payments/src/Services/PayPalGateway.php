@@ -2,6 +2,26 @@
 
 namespace HP\Services;
 
+/**
+ * Class PayPalGateway
+ *
+ * Handles communication with the PayPal API for creating and capturing orders.
+ * 
+ * This class is responsible for:
+ * - Authenticating with PayPal using client ID and secret
+ * - Creating orders via the PayPal v2 Checkout API
+ * - Capturing approved orders
+ * - Managing dynamic configuration (live/sandbox mode, return/cancel URLs, etc.)
+ * 
+ * The credentials and settings are pulled from WordPress options,
+ * configured via the Headless Payments plugin settings page.
+ *
+ * This class is intended to be called by the API layer (e.g., PayPalController)
+ * and should not directly handle REST or UI logic.
+ *
+ * @package HP\Gateways
+ */
+
 use WP_Error;
 
 class PayPalGateway {
