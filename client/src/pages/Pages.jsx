@@ -45,7 +45,7 @@ const Pages = () => {
   //  If a content editor changes the page's slug in WordPress, this logic breaks silently.
 
   if (node.__typename === 'Page') {
-    if (node.uri === '/checkout/' || node.uri === 'checkout') {
+    if (node.uri === '/checkout/') {
       return <Checkout />;
     }
 
