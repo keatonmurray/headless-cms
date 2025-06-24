@@ -1,6 +1,6 @@
 /**
  * This query retrieves dynamically added pages/categories/simple product from the WP Dashboard 
- */
+*/
 
 import { gql } from '@apollo/client';
 
@@ -8,7 +8,6 @@ export const GET_PAGE_BY_URI = gql`
   query RESOLVE_NODE_BY_URI($uri: String!) {
     nodeByUri(uri: $uri) {
       __typename
-
       ... on ProductCategory {
         id
         name
