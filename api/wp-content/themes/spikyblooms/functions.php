@@ -8,7 +8,6 @@ add_action('init', function () {
 });
 
 // Register Menus
-
 function enable_classic_menus() {
     register_nav_menus([
         'primary' => __('Primary Menu'),

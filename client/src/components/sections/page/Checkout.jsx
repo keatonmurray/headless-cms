@@ -5,7 +5,7 @@ const Checkout = () => {
     const [isBillingAddressDifferent, setIsBillingAddressDifferent] = useState(false)
 
     const setBillingAddress = () => {
-        setIsBillingAddressDifferent(true)
+        setIsBillingAddressDifferent(prev => !prev)
     }
 
   return (
