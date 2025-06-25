@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Layout from './layout/Layout';
 import Pages from './pages/Pages';
-import Checkout from './components/sections/page/Checkout';
 
 function App() {
   return (

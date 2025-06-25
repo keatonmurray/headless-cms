@@ -100,3 +100,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+/** Defines the Client side URL - defined for redirection calls from the backend to the frontend */
+define( 'CLIENT_BASE_URL', 'http://localhost:5173');

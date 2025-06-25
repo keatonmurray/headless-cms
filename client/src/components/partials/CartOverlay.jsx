@@ -1,16 +1,18 @@
 import Img from '../partials/Img.jsx';
 import product from '/img/product1.jpg';
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CartOverlay = () => {
 
+  const navigate = useNavigate();
+
   const proceedToCheckout = () => {
     const cartSummary = {
-      amount: 65,
+      amount: 1,
       currency: "USD"
     }
     localStorage.setItem('hp_cart', JSON.stringify(cartSummary));
-    window.location.href = '/checkout';
+    navigate('/checkout');
   }
 
   return (
