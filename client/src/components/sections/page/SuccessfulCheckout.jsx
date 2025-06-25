@@ -1,13 +1,11 @@
-import bg from '/img/thank-you.png'
 import { Link } from 'react-router-dom'
 
-const SuccessfulCheckout = ({content}) => {
+const SuccessfulCheckout = ({content, featuredImage, altText}) => {
   return (
    <div className="row successful-checkout-page my-5">
     <div className="row">
       <div className="col-12 d-flex align-items-center justify-content-center text-center flex-wrap">
-        <img src={bg} alt="Background Image" className="img-fluid mb-3" />
-
+        <img src={featuredImage?.node?.sourceUrl} alt={altText} className="img-fluid mb-3" />
         <div className="w-100 d-flex justify-content-center">
           <div style={{ maxWidth: '600px' }} className="px-3">
             <div dangerouslySetInnerHTML={{ __html: content }} />

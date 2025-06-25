@@ -41,6 +41,12 @@ export const GET_PAGE_BY_URI = gql`
         title
         uri
         content
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
       }
 
       ... on SimpleProduct {
@@ -128,5 +134,4 @@ export const GET_PAGE_BY_URI = gql`
       }
     }
   }
-
 `;

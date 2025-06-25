@@ -44,6 +44,7 @@ const Pages = () => {
   // Render the Checkout/Post component
   // IMPORTANT SIDE NOTE: This approach is experimental. I realize it creates tight coupling between my frontend logic and a fragile backend value (slug or URI)
   //  If a content editor changes the page's slug in WordPress, this logic breaks silently.
+
   if (node.__typename === 'Page') {
 
     if (node.uri === '/checkout/') {
@@ -51,7 +52,7 @@ const Pages = () => {
     }
 
     if (node.uri === '/successful-checkout/') {
-      return <SuccessfulCheckout content={node.content} />;
+      return <SuccessfulCheckout featuredImage={node.featuredImage} altText={node.altText} content={node.content} />;
     }
 
     return <Post title={node.title} content={node.content} />;
