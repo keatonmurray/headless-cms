@@ -51,7 +51,7 @@ const Pages = () => {
     }
 
     if (node.uri === '/successful-checkout/') {
-      return <SuccessfulCheckout />;
+      return <SuccessfulCheckout content={node.content} />;
     }
 
     return <Post title={node.title} content={node.content} />;
