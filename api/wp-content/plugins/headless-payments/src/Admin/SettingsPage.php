@@ -40,9 +40,15 @@ class SettingsPage {
     }
 
     public function register_settings() {
+        // PayPal
         register_setting('hp_settings_group', 'hp_paypal_mode');
         register_setting('hp_settings_group', 'hp_paypal_client_id');
         register_setting('hp_settings_group', 'hp_paypal_secret');
+    
+        // Stripe
+        register_setting('hp_settings_group', 'hp_stripe_mode');
+        register_setting('hp_settings_group', 'hp_stripe_publishable_key');
+        register_setting('hp_settings_group', 'hp_stripe_secret');
     }
 
     public function render_settings_page() {

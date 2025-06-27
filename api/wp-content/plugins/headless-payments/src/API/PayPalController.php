@@ -90,7 +90,7 @@ class PayPalController {
             return new WP_REST_Response('Capture failed', 400);
         }
 
-        // Redirect to frontend after successful checkout
+        // Redirect back to frontend after successful checkout
         wp_redirect(CLIENT_BASE_URL . '/successful-checkout');
         exit;
     }
