@@ -7,6 +7,17 @@ namespace HP\API;
  * 
  * Registers REST API routes related to PayPal operations for the Headless Payments plugin.
  * 
+ * This controller handles endpoints like: 
+ * - POST /wp-json/headless-payments/v1/stripe/create-payment-intent
+ * 
+ * Responsibilities: 
+ * - Registers Stripe-related routes on `rest_api_init`
+ * - Receives JSON requests for creating payment intent
+ * - Delegate actual processing tp to the Stripe service layer 
+ * 
+ * This controller is intended for internal use by headless frontends (e.g. React, Vue)
+ * that communicate with WordPress via REST API to process payments securely.
+ * 
  * @package HP\API
  */
 
