@@ -49,6 +49,7 @@ const Checkout = ({clientSecret}) => {
 
     // Stripe Payment
     const handleStripePayment = async () => {
+        setLoading(true)
         const card = elements.getElement(CardElement);
         const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -68,6 +69,7 @@ const Checkout = ({clientSecret}) => {
                 confirmButtonText: 'OK',
             }).then((result) => {
                     if (result.isConfirmed) {
+                    setLoading(false)
                     navigate('/successful-checkout'); 
                 }
             });
@@ -108,13 +110,20 @@ const Checkout = ({clientSecret}) => {
                         <h5>Payment Methods</h5>
                         <hr />
                         <div className="w-100">
-                            <button className="btn btn-paypal-custom w-100 my-3" onClick={handlePayPalPayment}> <i className="fa-brands fa-paypal me-1"></i>Pay with PayPal</button>
-                            <div className="card-element-wrapper card border-0 shadow-lg">
+                            <div className="card-element-wrapper mb-3">
+                                <p className="fw-bold">PayPal</p>
+                                <button className="btn btn-paypal-custom w-100 mb-3" onClick={handlePayPalPayment}> <i className="fa-brands fa-paypal me-1"></i>Pay with PayPal</button>
+                            </div>
+                            <div className="d-flex align-items-center my-3">
+                                <hr className="flex-grow-1" />
+                                <span className="px-3 text-muted">or</span>
+                                <hr className="flex-grow-1" />
+                            </div>
+                            <div className="card-element-wrapper mt-3">
+                                <p className="fw-bold">Stripe</p>
                                 <CardElement />
                                 <button onClick={handleStripePayment} className="btn btn-stripe-custom w-100 my-3" disabled={!stripe || !clientSecret}> <i className="fa-brands fa-stripe-s me-1"></i>Pay with Stripe</button>
                             </div>
-                            <button className="btn btn-cashapp-custom w-100 mt-3"><i className="fa-solid fa-dollar-sign me-1"></i>Pay with Cashapp</button>
-                            <button className="btn btn-debit-credit-custom w-100 mt-2"><i className="fa-solid fa-credit-card me-1"></i>Pay with Debit/Credit Card</button>
                         </div>
                     </div>
                 </div>

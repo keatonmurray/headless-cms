@@ -300,22 +300,6 @@ footer i {
   padding: 11px !important;
 }
 
-.btn-cashapp-custom {
-  background-color: rgb(68, 172, 58) !important;
-  color: #fff !important;
-  font-weight: bold !important;
-  font-family: system-ui !important;
-  padding: 11px !important;
-}
-
-.btn-debit-credit-custom {
-  border: 1px #000 solid !important;
-  color: #000000 !important;
-  font-weight: bold !important;
-  font-family: system-ui !important;
-  padding: 11px !important;
-}
-
 .btn-paypal-custom:hover {
   background-color: rgb(27, 27, 27) !important;
   color: #fff !important;
@@ -332,31 +316,14 @@ footer i {
   padding: 11px !important;
 }
 
-.btn-cashapp-custom:hover {
-  background-color: rgb(52, 134, 45) !important;
-  color: #fff !important;
-  font-weight: bold !important;
-  font-family: system-ui !important;
-  padding: 11px !important;
-}
-
-.btn-debit-credit-custom:hover {
-  border: 1px #000000 solid !important;
-  color: #000000 !important;
-  background-color: #e4e4e4 !important;
-  font-weight: bold !important;
-  font-family: system-ui !important;
-  padding: 11px !important;
-}
-
 .card-element-wrapper {
-  padding: 20px 15px !important;
+  padding: 15px !important;
 }
 
 .card-element-wrapper .StripeElement {
   border: 1px solid #d0d0d0;
   padding: 18px;
-  border-radius: 100px;
+  border-radius: 10px;
 }
 
 /* Successful Checkout Page */
