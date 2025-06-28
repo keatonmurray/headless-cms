@@ -61,7 +61,7 @@ class PayPalGateway {
                     ]
                 ]],
                 'application_context' => [
-                    'return_url' => site_url('/wp-json/hp/v1/paypal/success'),
+                    'return_url' => home_url('/checkout/success'),
                     'cancel_url' => home_url('/checkout/cancel'),
                 ]
             ])

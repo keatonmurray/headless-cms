@@ -25,7 +25,6 @@ namespace HP\API;
 use HP\Services\PayPalGateway;
 use WP_REST_Request;
 use WP_Error;
-use WP_REST_Response;
 
 class PayPalController {
     public function register_routes()
@@ -39,12 +38,6 @@ class PayPalController {
         register_rest_route('hp/v1', '/paypal/capture-order', [
             'methods'  => 'POST',
             'callback' => [$this, 'handle_capture_order'],
-            'permission_callback' => '__return_true',
-        ]);
-
-        register_rest_route('hp/v1', '/paypal/success', [
-            'methods'  => 'GET',
-            'callback' => [$this, 'hp_handle_paypal_success'],
             'permission_callback' => '__return_true',
         ]);
     }
@@ -72,25 +65,5 @@ class PayPalController {
 
         $paypal = new PayPalGateway();
         return $paypal->capture_order($order_id);
-    }
-
-    public function hp_handle_paypal_success(WP_REST_Request $request) {
-        $token = $request->get_param('token');
-        $payerId = $request->get_param('PayerID');
-
-        if (!$token || !$payerId) {
-            return new WP_REST_Response('Missing token or PayerID', 400);
-        }
-
-        $paypal = new \HP\Services\PayPalGateway();
-        $result = $paypal->capture_order($token);
-
-        if (is_wp_error($result)) {
-            return new WP_REST_Response('Capture failed', 400);
-        }
-
-        // Redirect back to frontend after successful checkout
-        wp_redirect(CLIENT_BASE_URL . '/successful-checkout');
-        exit;
     }
 }
