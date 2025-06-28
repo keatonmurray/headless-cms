@@ -27,11 +27,11 @@ One of the pain points in a headless CMS architecture is being limited from Wooc
 
 ## Admin Dashboard
 
-![Admin Dashboard Preview](./headless-payments/assets/admin-dashboard.png)
+![Admin Dashboard Preview](./assets/admin-dashboard.png)
 
 ## Custom Checkout
 
-![Custom Checkout Flow](./headless-payments/assets/checkout.png)
+![Custom Checkout Flow](./assets/checkout.png)
 
 ## ⚡ Frontend Frameworks Supported
 
@@ -55,6 +55,7 @@ One of the pain points in a headless CMS architecture is being limited from Wooc
 2. **Install the Plugin**
     - Clone this repository or download the ZIP
     - Place the plugin folder (`headless-payments`) inside your `/wp-content/plugins/` directory
+    - In your `/wp-content/plugins/headless-payments`, install the composer dependencies (composer install)
 
 3. **Activate the Plugin**
     - Log in to your WordPress dashboard
