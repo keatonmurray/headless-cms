@@ -349,6 +349,16 @@ footer i {
   padding: 11px !important;
 }
 
+.card-element-wrapper {
+  padding: 20px 15px !important;
+}
+
+.card-element-wrapper .StripeElement {
+  border: 1px solid #d0d0d0;
+  padding: 18px;
+  border-radius: 100px;
+}
+
 /* Successful Checkout Page */
 
 .successful-checkout-page img {

@@ -35,7 +35,7 @@ class SettingsPage {
             'manage_options',
             'headless-payments',
             [$this, 'render_settings_page'],
-            'dashicons-cart'
+            'dashicons-money-alt'
         );
     }
 
