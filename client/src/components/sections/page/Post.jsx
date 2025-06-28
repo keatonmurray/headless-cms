@@ -1,11 +1,4 @@
-const Post = ({ title, content }) => {
-  const cactusImages = [
-    "/img/post-bg.jpg",
-    "/img/post-bg2.jpg",
-    "/img/post-bg3.jpg",
-    "/img/post-bg4.jpg",
-  ];
-
+const Post = ({ title, content, featuredImage, altText }) => {
   return (
     <div className="post-page container py-5">
       <div className="d-flex flex-column align-items-center justify-content-start min-vh-100">
@@ -15,19 +8,11 @@ const Post = ({ title, content }) => {
             <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
               <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 pt-4">
               <div className="row">
-                {cactusImages.map((src, index) => (
-                  <div key={index} className="col-12 col-md-6 mb-2">
-                    <div className="container-fluid">
-                      <img
-                        src={src}
-                        alt={`Cactus ${index + 1}`}
-                        className="img-fluid w-100"
-                      />
-                    </div>
-                  </div>
-                ))}  
+                <figure>
+                  <img src={featuredImage?.node?.sourceUrl} alt={altText?.node?.altText} className="img-fluid"/>
+                </figure>
               </div>
             </div>
           </div>

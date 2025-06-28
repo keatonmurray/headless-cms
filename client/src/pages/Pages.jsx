@@ -54,7 +54,9 @@ const Pages = () => {
       );
     }
 
-    return <Post title={node.title} content={node.content} />;
+    console.log(node)
+
+    return <Post title={node.title} content={node.content} featuredImage={node.featuredImage} altText={node.altText} />;
   }
 
   return <PageNotFound />;
