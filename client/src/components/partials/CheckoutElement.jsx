@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import Cliploader from './Cliploader';
 import Checkout from '../sections/page/Checkout';
 import axios from 'axios';
 
@@ -31,16 +32,17 @@ const CheckoutElement = ({normalizedPath}) => {
         console.error("Error fetching Stripe keys:", error);
         }
     };
-
         fetchStripeApiKeys();
     }, [normalizedPath]);
 
 return (
-    <div>
-        {clientSecret && stripePromise && (
-            <Elements stripe={stripePromise} options={{ clientSecret }}>
-                <Checkout clientSecret={clientSecret}/>
-            </Elements>
+     <div>
+        {!clientSecret || !stripePromise ? (
+            <Cliploader/>
+        ) : (
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
+            <Checkout clientSecret={clientSecret} />
+        </Elements>
         )}
     </div>
   )
